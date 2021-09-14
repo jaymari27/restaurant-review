@@ -1,0 +1,93 @@
+{% extends "index.html" %} {% block content %}
+<form action="/submit" method="POST">
+  <div class="form-group">
+    <h5>First Name <span>*required</span></h5>
+    <input type="text" name="firstname" placeholder="First name" />
+  </div>
+  <div class="form-group">
+    <h5>Last Name <span>*required</span></h5>
+    <input type="text" name="lastname" placeholder="Last name" />
+  </div>
+  <div class="form-group">
+    <h5>Order number <span>*required</span></h5>
+    <input
+      type="number"
+      name="orderno"
+      placeholder="0000"
+      aria-describedby="odrno"
+    />
+    <small-id ="odrno" class="form-text text-muted"
+      >Find the order number in the upper portion of your receipt. Click
+      <a
+        data-toggle="collapse"
+        href="#collapseImg"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseImg"
+        >here</a
+      >
+      to see a sample!
+    </small-id>
+    <div class="collapse" id="collapseImg">
+      <div class="card-body collapse-card">
+        <img src="../static/img/sample-receipt.png" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <h5>Attending Waiter <span>*required</span></h5>
+    <select name="waiter">
+      <option value="">Select Waiter</option>
+      <option value="Luke Pierce">Luke Pierce</option>
+      <option value="Artem Wing">Artem Wing</option>
+      <option value="Vyn Richter">Vyn Richter</option>
+      <option value="Marius von Hagen">Marius von Hagen</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <h5>Please rate the attending waiter: <span>*required</span></h5>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="rating"
+        id="rating-poor"
+        value="Poor"
+      />
+      <label class="form-check-label" for="rating-poor"> Poor </label>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="rating"
+        id="rating-average"
+        value="Average"
+      />
+      <label class="form-check-label" for="rating-average"> Average </label>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="rating"
+        id="rating-excellent"
+        value="Excellent"
+        checked
+      />
+      <label class="form-check-label" for="rating-excellent"> Excellent </label>
+    </div>
+  </div>
+  <div class="form-inline">
+    <h5>Comments about your experience <span>(Optional)</span></h5>
+    <textarea
+      class="form-control"
+      name="comments"
+      id="comments"
+      rows="5"
+      placeholder="Tell us what you liked and/or did not like"
+    ></textarea>
+  </div>
+  <input type="submit" value="Submit" class="btn" />
+</form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "index.html" %} {% block content %}
+<div class="text-center">
+  <h1>Thank You!</h1>
+  <h2>Thank you for rating your experience. We hope to see you soon!</h2>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5>Here's what you entered:</h5>
+    <dl class="row">
+      <dt class="col-sm-5">Customer Name:</dt>
+      <dd class="col-sm-6">{{ firstname }} {{ lastname }}</dd>
+      <dt class="col-sm-5">Attending Waiter:</dt>
+      <dd class="col-sm-6">{{ waiter }}</dd>
+      <dt class="col-sm-5">Ratings:</dt>
+      <dd class="col-sm-6">{{ rating }}</dd>
+      <dt class="col-sm-5">Additional Comments:</dt>
+      <dd class="col-sm-6">{{ comments }}</dd>
+      <dt class="col-sm-5">Order Number:</dt>
+      <dd class="col-sm-6">{{ orderno }}</dd>
+    </dl>
+  </div>
+</div>
+<a class="btn" href="{{ url_for('index') }}">Return to Home</a>
+{% endblock %}
