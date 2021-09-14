@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/styles.css" />
+    <title>Thank You!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Il Ristorante</a>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Thank You!</h1>
+      <h2>Thank you for rating your experience. We hope to see you soon!</h2>
+      <div class="card">
+        <div class="card-body">
+          <h5>Here are what you entered:</h5>
+          <dl class="row">
+            <dt class="col-sm-5">Customer Name:</dt>
+            <dd class="col-sm-6">{{ customer }}</dd>
+            <dt class="col-sm-5">Attending Waiter:</dt>
+            <dd class="col-sm-6">{{ waiter }}</dd>
+            <dt class="col-sm-5">Ratings:</dt>
+            <dd class="col-sm-6">{{ rating }}</dd>
+            <dt class="col-sm-5">Additional Comments:</dt>
+            <dd class="col-sm-6">
+              {% if commentsEmpty %}<i>
+                The customer did not enter any comment. </i
+              >{% else %} {{ comments }} {%endif%}
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <a class="btn" href="{{ url_for('index') }}">Return to Home</a>
+    </div>
+  </body>
+</html>
